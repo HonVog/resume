@@ -1,24 +1,55 @@
-# resume
+<picture>
+<img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." 
+        src="./src/assets/my_foto.jpg"
+        style="width: 10%; height: 20%;"
+        >
+</picture>
 
-## Project setup
-```
-npm install
-```
+# Резюме соискателя
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Соискатель: _Ваганов Георгий Борисович_
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Общие данные о соискателе
 
-### Lints and fixes files
 ```
-npm run lint
+пол: муж
+гражданство: РФ
+возраст: 33 года
+город проживания: Уфа
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Контактные данные соискателя
+
+```
+телефон: +79177646744
+email: honvog@mail.ru
+```
+
+### Характеристи о себе соискателя
+
+```
+Трудолюбие в решении поставленых задач.
+Стремление к изучению новых материалов и получению знаний.
+Отвественость за возложеные обязонности.
+```
+
+### Навыки програмирования
+
+```
+Основной язык програмирования JavaScript
+Работа с фреймворком: Vue.js
+малый опыт работы с библиотекой: React
+Знание связыных с js: HTML, CSS, SCSS, less
+Знаком с работой баз данных: SQL
+Работал с языками програмирования: Python, C++, C#
+```
+
+### Презентационный проект
+
+```
+Язык програмирования JS на фреймворке Vue.js
+Используеться less для формирования стилей
+Серверная часть не реализуеться так как проент создан для ознакомления
+```
+
+[Сылка на презентационный проект](https://cli.vuejs.org/config/).

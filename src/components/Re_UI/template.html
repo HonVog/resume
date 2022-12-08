@@ -1,0 +1,96 @@
+<div class="FCS-Head__wrapper full-size">
+    <div class="FCS-Head__head shadow full-size">
+        <div class="FCS-Head__head_site full-size flex flex-item-center flex-justify-between">
+            <!--Красивый текс оглавления-->
+            <div class="FCS-Head__head_site-name flex flex-center"
+                    @click="$router.push({ name: 'home'})"  
+            >
+                <div class="FCS-Head__head_site-name-text">
+                    <h1>FSC / </h1><span><i>Fabe Story Comics</i></span>
+                </div>
+            </div>
+            <!-- Кнопки для основного меню -->
+            <el-row class="mb-4" v-for="item in headButton">
+
+                <el-popover v-if="item.basicValue === 'Читай'"
+                    placement = "bottom" 
+                    :width = "300"
+                    trigger = "hover"
+                    :content= item.helpValue
+                >
+                    <template #reference>
+                        <el-button 
+                            :color=item.color
+                            @click="$router.push({ name: item.Links})"      
+                            >
+                                <pre> {{item.basicValue}}  <el-icon v-html="item.html"/></pre>
+                        </el-button>
+                    </template>
+                </el-popover>
+                <el-popover v-else-if="item.basicValue !== 'Авторизация' &&  isAutUser"
+                    placement = "bottom" 
+                    :width = "300"
+                    trigger = "hover"
+                    :content= item.helpValue
+                >
+                    <template #reference>
+                        <el-button 
+                            :color=item.color
+                            @click="$router.push({ name: item.Links})"      
+                            >
+                                <pre>{{item.basicValue}} <el-icon v-html="item.html"/></pre>
+                        </el-button>
+                    </template>
+                </el-popover>
+                <el-popover v-else-if="item.basicValue === 'Авторизация' &&  !isAutUser"
+                    placement = "bottom" 
+                    :width = "300"
+                    trigger = "hover"
+                    :content= item.helpValue
+                >
+                    <template #reference>
+                        <el-button 
+                            :color=item.color
+                            @click="$router.push({ name: item.Links})"      
+                            >
+                               <pre>{{item.basicValue}}  <el-icon v-html="item.html"/></pre>
+                        </el-button>
+                    </template>
+                </el-popover>
+                <div v-else-if="item.basicValue === 'Авторизация' &&  isAutUser"> 
+                    <el-avatar v-if ="!userLabel">
+                        <el-icon><Avatar /></el-icon>
+                    </el-avatar>
+                    <el-avatar v-else :src="userLabel" />
+                    <span style="margin: 1rem;">{{ userLogin }}</span>
+                </div>
+                    
+            </el-row>
+            <!--поисковик по основным категориям-->
+            <div class="FCS-Head__head_site-input">
+                <el-input
+                    v-model="userInput"
+                    :placeholder=inputPlaceholder
+                    class="input-with-select"
+                >
+                    <template #prepend>
+                        <el-select v-model="searchValue"
+                            style="width: 12rem">
+                            <el-option 
+                                v-for="item in selectionCategories"
+                                :label=item.name 
+                                :value=item.value
+                            />
+                        </el-select>
+                    </template>
+                    <template #append>
+                        <el-button @click="searchСategoryInput"
+                            >Поиск_
+                                <Search style="width: 1rem; height: 1rem; margin-right: 0.9rem" />
+                        </el-button>
+                    </template>
+                </el-input>
+            </div>
+        </div>
+    </div>
+</div>

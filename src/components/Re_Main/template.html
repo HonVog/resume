@@ -1,0 +1,32 @@
+<div class="Re-Main__wrapper full-heigth scroll">
+    <div class="Re-Main__hed flex flex-item-center flex-justify-between full-width">
+        <div class="Re-Main__hed-name">
+            <pre>
+                <span>Техническое резюме соискателя: <i>Ваганова Георгия Борисовича</i> </span>
+            </pre>
+        </div>
+        <img class="Re-Main__hed-img hidden-overflow" src="../../assets/my_foto.jpg" alt="">
+    </div>
+    <div class="Re-Main__main">
+        <div class="Re-Main__main-col full-width"
+            v-for="(element, index) in  list_user "
+            :key="index"
+        >
+            <div>
+               <h3 class="Re-Main__main-row">{{ getObjectKey(element)}}</h3>
+               <div class="Re-Main__main-row"
+                    v-for="elCol in list_user[index][getObjectKey(element)]">
+                    <span>
+                        {{(getObjectKey(elCol) ? getObjectKey(elCol) : elCol)}}
+                    </span>
+                    <span v-if="getObjectKey(elCol)">
+                         : {{elCol[getObjectKey(elCol)]}}
+                    </span>              
+               </div>
+            </div> 
+        </div>
+        <div class="Re-Main__main-prezent">
+            <Re_PrezentVue />
+        </div>
+    </div>
+</div>
