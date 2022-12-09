@@ -1,3 +1,16 @@
 <div class="Re-Prezent__wrapper full-size">
-   Prezent
+   <div class="Re-Prezent__button flex flex-item-center flex-justify-around full-width">
+         <Re_ButtonVue v-for="(event, index) in list_button"
+                     :class="{ 'activ-key': event.key === activKey }"
+                     :key="index"
+                     @click="clickButton(event.key)"
+         >
+            {{event.name}}
+         </Re_ButtonVue>
+   </div>
+   <div v-if="activKey" class="Re-Prezent__prezent">
+      <Re_ActivPanelVue :activKey="activKey"
+                        @exitPanel="exitPanel"
+      />
+   </div>
 </div>

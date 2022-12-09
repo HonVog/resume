@@ -1,0 +1,31 @@
+<div class="Re-Skroll__wrapper hidden-overflow">
+    <div class="Re-Skroll__hed flex flex-item-center flex-justify-around">
+        <span>Skroll</span>
+        <Re_ButtonVue class="Button"
+                    @click="this.$emit('exitPanel')"
+        >
+            x
+        </Re_ButtonVue>
+    </div>
+    <div class="Re-Skroll__body flex flex-column flex-item-center">
+        <div class="full-width scroll">
+            <div class="Re-Skroll__body-row flex flex-item-center flex-justify-around full-width" 
+                v-for="(element, index) in scrolList"
+                :key="index"
+                >
+                <pre>
+                    <div>№{{element.id}} {{element.titel}}</div>
+                    <div>{{element.text}}</div>
+                </pre>
+                <Re_ButtonVue 
+                            @click="delEl(index)"
+                >
+                    Удалить
+                </Re_ButtonVue>
+            </div>
+        </div>
+    </div>
+    <div class="Re-Skroll__foot flex flex-item-center flex-justify-around">
+        <span>скрол бар</span>
+    </div>
+</div>

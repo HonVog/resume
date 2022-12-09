@@ -4,15 +4,12 @@
 
 <script>
     export default {
-        name: "FCS-Head",
+        name: "Re_DinamPanel",
         props: [
        
         ],
         data(){
-            return {
-                searchValue:'Все категории',
-                userInput:'',
-                inputPlaceholder: 'Икать в категории',      
+            return {      
             }
         },
         computed:{

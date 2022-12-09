@@ -1,0 +1,22 @@
+<div class="Re-ActivPanel__wrapper full-screen flex flex-center">
+   <Re_DinamPanelVue v-if="activKey === 'dinamic'"
+                     :listPrint="activ_panel"
+                     @getKey="getKey"
+                     @exitPanel="exitPanel"
+   />
+   <Re_SkrollVue v-else-if="activKey === 'skroll'"
+                  :listPrint="activ_panel"
+                  @getKey="getKey"
+                  @exitPanel="exitPanel"
+   />
+   <Re_FormVue v-else-if="activKey === 'form'"
+               :listPrint="activ_panel"
+               @getKey="getKey"
+               @exitPanel="exitPanel" 
+   />
+   <Re_Style v-else="activKey === 'style'"
+            :listPrint="activ_panel"
+            @getKey="getKey"
+            @exitPanel="exitPanel"        
+   />
+</div>
