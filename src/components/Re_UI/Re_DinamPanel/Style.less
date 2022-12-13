@@ -1,7 +1,57 @@
-.Re-DinamPanel_{
-  &_wrapper{
+.Re-DinamPanel_ {
+  &_wrapper {
     width: 60%;
+    background: white;
+    position: relative;
+    max-height: 60%;
     border-radius: 10px;
+  }
+
+  &_hed {
+    height: 10%;
+    margin: 1%;
+  }
+
+  &_body{
+    margin: 1%;
+    height: 40vh;
+    border: 2px solid black;
+    position: relative;
+    
+
+    &-element{
+      background: rgb(156, 156, 156);
+    }
+
+    &-Activelement{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      background: white;
+    }
+  }
+  &_foot{
+    margin: 1%;
+    padding: 1%;
+  }
+}
+
+.Button{
+  margin: 1%;
+  padding: 1%;
+  border-radius: 50%;
+  &-left{
+    z-index: 200;
+    position: absolute;
+    left: 2%;
+    top: 50%;
+  }
+  &-right{
+    z-index: 200;
+    position: absolute;
+    left: 95%;
+    top: 50%;
   }
 }
 

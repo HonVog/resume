@@ -25,7 +25,7 @@
         methods: {
             pushTenElement() {
                 let nam = this.scrolList.length;
-                
+
                 for(let i = nam; i < nam + 10; ++i) {
                     this.scrolList.push({...this.listPrint[0]});
                     this.scrolList[i].id = i + 1;
@@ -35,6 +35,7 @@
             delEl(id) {
                 this.scrolList.splice(id, 1)
             }
+            
         }
     }
 </script>

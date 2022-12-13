@@ -1,3 +1,35 @@
-<div class="Re-Form__wrapper">
-    
+<div class="Re-Form__wrapper hidden-overflow">
+    <div class="Re-Form__hed flex flex-item-center flex-justify-around">
+        <h2>Форма авториизации</h2>
+        <Re_ButtonVue class="Button"
+                @click="this.$emit('exitPanel')"
+        >
+            x
+        </Re_ButtonVue>
+    </div>
+    <div class="Re-Form__body flex flex-column flex-item-center">
+        <div class="Re-Form__body-element flex flex-item-center flex-justify-around full-width"
+            v-for="(element, index) in listPrint"
+            :key="index"
+        >
+            <input class="full-width"
+                    :type="element.titel != 'pasvord' ? 'text': 'password'" 
+                    :placeholder="element.text" 
+                    v-model="baseForm[ element.titel ]"
+            >
+        </div>   
+    </div>
+    <div class="Re-Form__foot flex flex-justify-around flex-item-center">
+        <Re_ButtonVue class="Button-aut"
+            v-if="checForm()"
+            @click="this.$emit('getKey', baseForm)"
+        >
+            подтвердить
+        </Re_ButtonVue>
+        <Re_ButtonVue class="Button-exit"
+            @click="this.$emit('exitPanel')"
+        >
+            выход
+        </Re_ButtonVue>
+    </div>
 </div>

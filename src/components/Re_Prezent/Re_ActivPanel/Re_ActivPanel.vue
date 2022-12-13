@@ -33,6 +33,11 @@
         methods:{
             exitPanel(){
                 this.$emit('exitPanel')
+            },
+
+            getKey(event){
+                this.exitPanel()
+                console.log(event)
             }
         }
     }

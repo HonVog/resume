@@ -30,6 +30,11 @@ const PREZENT_ACTIV = {
             }
         ],
     'dinamic':[
+            {
+                id: 1,
+                titel: 'img',
+                text: 'Базовое изображение внутри окна',   
+            }
         ],
     
     'form':[

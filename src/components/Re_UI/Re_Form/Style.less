@@ -1,8 +1,51 @@
 .Re-Form_{
-  &_wrapper{
-    width: 40%;
-    border: 2px solid black;
-    background-color: bisque;
+  &_wrapper {
+    width: 60%;
+    background: white;
+    position: relative;
+    max-height: 60%;
+    border-radius: 10px;
+  }
+
+  &_hed {
+    height: 10%;
+    margin: 1%;
+  }
+
+  &_body{
+    margin: 1%;
+    height: auto;
+
+    &-element{
+      margin: 1%;
+      padding: 1%;
+      border-bottom: 1px solid black;
+
+      input{
+        padding: 1%;
+      }
+    }
+  }
+  &_foot{
+    margin: 1%;
+    padding: 1%;
   }
 }
 
+.Button{
+  margin: 1%;
+  padding: 1%;
+  border-radius: 50%;
+  &-left{
+    z-index: 200;
+    position: absolute;
+    left: 2%;
+    top: 50%;
+  }
+  &-right{
+    z-index: 200;
+    position: absolute;
+    left: 95%;
+    top: 50%;
+  }
+}

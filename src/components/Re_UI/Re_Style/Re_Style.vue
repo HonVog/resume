@@ -1,12 +1,11 @@
-<template src="./template.html">
-    
+<template src="./template.html"> 
 </template>
 
 <script>
     export default {
         name: "Re_Style",
         props: [
-       
+
         ],
         data(){
             return {     

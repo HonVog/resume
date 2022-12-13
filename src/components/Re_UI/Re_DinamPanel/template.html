@@ -1,3 +1,39 @@
-<div class="Re-DinamPanel__wrapper">
-    
+<div class="Re-DinamPanel__wrapper ">
+    <div class="Re-DinamPanel__hed flex flex-item-center flex-justify-around">
+        <h2>Динамическое переключение изображений</h2>
+        <Re_ButtonVue class="Button"
+                @click="this.$emit('exitPanel')"
+        >
+            x
+        </Re_ButtonVue>
+    </div>
+    <div class="Re-DinamPanel__body hidden-overflow">
+        <div class="Re-DinamPanel__body-element full-size"
+            v-for="(element, index) in dinamicList"
+            :key="index"
+        >
+            {{element}}
+            <div class="Re-DinamPanel__body-Activelement full-size flex flex-center cursor-pointer"
+                v-if="element.id === activElement.id"
+                @click="this.$emit('getKey', element)"
+            >
+                <pre>
+                <span>Выбрать:</span><br/> 
+                <span>{{activElement.text}} №{{activElement.id}}</span>
+                </pre>
+            </div>
+        </div>
+
+        <Re_ButtonVue class="Button-left"
+            @click="setLeft"
+        >
+            {{activLeft}}
+        </Re_ButtonVue>
+        <Re_ButtonVue class="Button-right"
+            @click="setRigth"
+        >
+            {{activRegth}}
+        </Re_ButtonVue>
+    </div>
+    <div class="Re-DinamPanel__foot"></div>
 </div>

@@ -9,6 +9,11 @@
     </div>
     <div class="Re-Skroll__body flex flex-column flex-item-center">
         <div class="full-width scroll">
+            <div class="Re-Skroll__body-row flex flex-item-center flex-justify-around full-width"
+                v-if="!scrolList.length"
+            >
+                Нет данных
+            </div>
             <div class="Re-Skroll__body-row flex flex-item-center flex-justify-around full-width" 
                 v-for="(element, index) in scrolList"
                 :key="index"
@@ -18,14 +23,29 @@
                     <div>{{element.text}}</div>
                 </pre>
                 <Re_ButtonVue 
+                            @click="this.$emit('getKey', element)"
+                >
+                    Выбрать
+                </Re_ButtonVue>
+                <Re_ButtonVue 
                             @click="delEl(index)"
                 >
                     Удалить
                 </Re_ButtonVue>
             </div>
+            <div class="Re-Skroll__body-row flex flex-item-center flex-justify-around full-width" 
+                >
+                <pre>
+                    Добавить данные
+                </pre>
+                <Re_ButtonVue 
+                            @click="pushTenElement"
+                >
+                    Добавить
+                </Re_ButtonVue>
+            </div>
         </div>
     </div>
     <div class="Re-Skroll__foot flex flex-item-center flex-justify-around">
-        <span>скрол бар</span>
     </div>
 </div>
